@@ -52,5 +52,3 @@ jobs:
           echo 'Month - $MONTH'
           echo 'Year - ${{ env.YEAR }}'
           echo 'My favorite day of week is - $FAVORITE_DAY_OF_WEEK'
-      - name: Run tmate
-        uses: mxschmitt/action-tmate@v2
