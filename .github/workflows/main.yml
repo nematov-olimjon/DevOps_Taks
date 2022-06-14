@@ -45,9 +45,9 @@ jobs:
       - name: Run a multi-line script
 
         run: |
-          export DAY_OF_THE_MONTH=23
+          DAY_OF_THE_MONTH=23
           date
           echo 'Day - $DAY_OF_THE_MONTH'
-          echo 'Month - $MONTH'
+          echo 'Month - ${{ env.MONTH }} '
           echo 'Year - ${{ env.YEAR }} '
           echo 'My favorite day of week is - $FAVORITE_DAY_OF_WEEK '
