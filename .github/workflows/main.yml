@@ -9,7 +9,7 @@ on:
 
 env:
   DEPLOY_VER: 0a7f19d38d7fe8c13587e2b02f0c8bca4accfcb51f2921285dac1616090c7abd
-  YEAR: 202
+  YEAR: 2020
   FAVORITE_DAY_OF_WEEK: ${{ secrets.FAVORITE_DAY_OF_WEEK }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -33,14 +33,17 @@ jobs:
   job2:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
+        env:
+          FAVORITE_DAY_OF_WEEK: ${{ secrets.FAVORITE_DAY_OF_WEEK }}
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
+
         run: |
           MONTH=May
           DAY__OF_THE_MONTH=23
@@ -48,5 +51,6 @@ jobs:
           echo 'Day - $DAY__OF_THE_MONTH'
           echo 'Month - $MONTH'
           echo 'Year - ${{ env.YEAR }}'
-          FAVORITE_DAY_OF_WEEK=${{ env.FAVORITE_DAY_OF_WEEK }}
           echo 'My favorite day of week is - $FAVORITE_DAY_OF_WEEK'
+      - name: Run tmate
+        uses: mxschmitt/action-tmate@v2
