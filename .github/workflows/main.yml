@@ -48,6 +48,6 @@ jobs:
           DAY_OF_THE_MONTH=23
           date
           echo 'Day - $DAY_OF_THE_MONTH'
-          echo 'Month - ${{ env.MONTH }} '
+          echo 'Month - ${{ jobs.job2.MONTH }} '
           echo 'Year - ${{ env.YEAR }} '
           echo 'My favorite day of week is - $FAVORITE_DAY_OF_WEEK '
