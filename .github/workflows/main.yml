@@ -8,8 +8,8 @@ on:
     branches: [ "*" ]
 
 env:
-  DEPLOY_VER: ${{ secrets.DEPLOY_VER }}
-  YEAR: ${{ secrets.YEAR }}'
+  DEPLOY_VER: 0a7f19d38d7fe8c13587e2b02f0c8bca4accfcb51f2921285dac1616090c7abd
+  YEAR: 202
   FAVORITE_DAY_OF_WEEK: ${{ secrets.FAVORITE_DAY_OF_WEEK }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -42,8 +42,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          MONTH='May'
-          DAY__OF_THE_MONTH='23'
+          MONTH=May
+          DAY__OF_THE_MONTH=23
           date
           echo 'Day - $DAY__OF_THE_MONTH'
           echo 'Month - $MONTH'
