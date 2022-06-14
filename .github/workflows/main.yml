@@ -27,7 +27,7 @@ jobs:
         run: |
           ls
           cat log.txt
-          echo 'Hello from  ${{ env.DEPLOY_VER }}'
+          echo 'Hello from  ${{ secrets.DEPLOY_VER }}'
   job2:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -45,5 +45,5 @@ jobs:
           date
           echo 'Day - $DAY__OF_THE_MONTH'
           echo 'Month - $MONTH'
-          echo 'Year - ${{ env.YEAR }}'
-          export FAVORITE_DAY_OF_WEEK='${{ env.FAVORITE_DAY_OF_WEEK }}'
+          echo 'Year - ${{ secrets.YEAR }}'
+          export FAVORITE_DAY_OF_WEEK='${{ secrets.FAVORITE_DAY_OF_WEEK }}'
