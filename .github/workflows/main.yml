@@ -7,8 +7,10 @@ on:
   push:
     branches: [ "*" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+env:
+  DEPLOY_VER: ${{ secrets.DEPLOY_VER }}
+  YEAR: ${{ secrets.YEAR }}'
+  FAVORITE_DAY_OF_WEEK: ${{ secrets.FAVORITE_DAY_OF_WEEK }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -21,15 +23,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        with: 
-          credentials: ${{ secrets.DEPLOY_VER }}
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
        
         run: |
           ls
           cat log.txt
-          echo 'Hello from  ${{ secrets.DEPLOY_VER }}'
+          echo 'Hello from  ${{ env.DEPLOY_VER }}'
   job2:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -38,16 +38,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-        with: 
-          credentials: ${{ secrets.YEAR }}
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          export MONTH='May'
-          export DAY__OF_THE_MONTH='23'
+          MONTH='May'
+          DAY__OF_THE_MONTH='23'
           date
           echo 'Day - $DAY__OF_THE_MONTH'
           echo 'Month - $MONTH'
-          echo 'Year - ${{ secrets.YEAR }}'
-          export FAVORITE_DAY_OF_WEEK='${{ secrets.FAVORITE_DAY_OF_WEEK }}'
+          echo 'Year - ${{ env.YEAR }}'
+          export FAVORITE_DAY_OF_WEEK='${{ env.FAVORITE_DAY_OF_WEEK }}'
