@@ -25,8 +25,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          ls,
-          cat log.txt,
+          ls
+          cat log.txt
           echo ${{ env.DEPLOY_VER }}
   job2:
     # The type of runner that the job will run on
@@ -40,10 +40,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          export MONTH='May',
-          export DAY__OF_THE_MONTH='23',
-          date,
-          echo 'Day - $DAY__OF_THE_MONTH',
-          echo 'Month - $MONTH',
-          echo 'Year - ${{ env.YEAR }}',
+          export MONTH='May'
+          export DAY__OF_THE_MONTH='23'
+          date
+          echo 'Day - $DAY__OF_THE_MONTH'
+          echo 'Month - $MONTH'
+          echo 'Year - ${{ env.YEAR }}'
           export FAVORITE_DAY_OF_WEEK='${{ env.FAVORITE_DAY_OF_WEEK }}'
