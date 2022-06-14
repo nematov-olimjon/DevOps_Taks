@@ -48,4 +48,5 @@ jobs:
           echo 'Day - $DAY__OF_THE_MONTH'
           echo 'Month - $MONTH'
           echo 'Year - ${{ env.YEAR }}'
-          export FAVORITE_DAY_OF_WEEK='${{ env.FAVORITE_DAY_OF_WEEK }}'
+          FAVORITE_DAY_OF_WEEK='${{ env.FAVORITE_DAY_OF_WEEK }}'
+          echo 'My favorite day of week is - $FAVORITE_DAY_OF_WEEK'
