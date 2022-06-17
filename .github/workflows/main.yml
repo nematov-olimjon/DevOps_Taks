@@ -26,8 +26,8 @@ jobs:
       - name: Run a multi-line script
        
         run: |
-          ls
-          cat log.txt
+          ls 
+          # cat log.txt
           echo 'Hello from  ${{ env.DEPLOY_VER }}'
   job2:
     # The type of runner that the job will run on
