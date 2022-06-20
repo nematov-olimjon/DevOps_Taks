@@ -1,2 +1,0 @@
-EC2 with nignx/apache: 3.86.163.34
-EC2 without nginx/apache: 54.165.153.190
